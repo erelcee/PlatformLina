@@ -74,8 +74,6 @@ void Direction_FW() {
                       
                      Forward_Bit = 1;
                      Backward_Bit = 0;
-                     Turn_L_Bit = 0;
-                     Turn_R_Bit = 0;
                      } 
 }
          
@@ -95,8 +93,6 @@ void Direction_BW() {
                      
                      Backward_Bit = 1;
                      Forward_Bit = 0;
-                     Turn_L_Bit = 0;
-                     Turn_R_Bit = 0;
                      }
 }
                   
