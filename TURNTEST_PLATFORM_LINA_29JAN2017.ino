@@ -102,7 +102,7 @@ void Direction_BW() {
                   
 void Direction_Turn_L(){
   
-                     if ((Turn_L_Bit == 0)||(Backward_Bit== 1)){ 
+                     if (Turn_L_Bit == 0){ 
                      delay(50); 
                      digitalWrite (L_Controller_ON, LOW); // Disable L Controller
                      digitalWrite (R_Controller_ON, LOW);  // Disable R Controller           
@@ -114,8 +114,6 @@ void Direction_Turn_L(){
                      digitalWrite(R_Controller_ON, HIGH);// Enable R Controller
                      Turn_L_Bit = 1;
                      Turn_R_Bit = 0;
-                     Forward_Bit = 1;
-                     Backward_Bit = 0;
                      }
 }
                     
@@ -133,8 +131,6 @@ void Direction_Turn_R(){
                      digitalWrite(R_Controller_ON, HIGH);// Enable R Controller
                      Turn_R_Bit = 1;
                      Turn_L_Bit = 0;
-                     Forward_Bit = 1;
-                     Backward_Bit = 1;
                      }
 }
 void Define_Extra_Speed(){ // Y+ = turn R (= extra speed L wheel) , Y- = turn L (= extra speed R wheel)
