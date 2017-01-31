@@ -1,4 +1,4 @@
-/*  TURNTEST_PLATFORM_LINA_31_JAN_2017
+/*  E_WALKER_LINA_31_JAN_2017
  *   
  *  Joystick_Speed_BLDC_CONTROLLER.ino
  *   
