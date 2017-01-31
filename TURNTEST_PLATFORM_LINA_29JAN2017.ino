@@ -207,12 +207,12 @@ void Speed_Limiet_Control(){
 
 void Read_Analog_Values(){
 
-                    Joy_y = analogRead (A0);
-                    Joy_x = analogRead (A1);
-                    Safety_L = analogRead(A2);
-                    Safety_R = analogRead (A3);
-                    ButtonState_Turn_L = digitalRead(Button_Turn_L);
-                    ButtonState_Turn_R = digitalRead(Button_Turn_R);
+                    Joy_y = analogRead (A0);// Joy_Stick L/R
+                    Joy_x = analogRead (A1);// Joy_Stick FW/BW
+                    Safety_L = analogRead (A2);// Feed_Back Voltage from L Controller
+                    Safety_R = analogRead (A3);// Feed_Back Voltage from R Controller
+                    ButtonState_Turn_L = digitalRead(Button_Turn_L); // Push Button on the left of the control panel
+                    ButtonState_Turn_R = digitalRead(Button_Turn_R); // Push Button on the left of the control panel
 }
  
 void Reset_Values(){
