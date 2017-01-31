@@ -6,7 +6,7 @@
  *  With Chinese BLDC sensored controller, Arduino Uno and Joystick.
  *  ( with de Joystick I produce PWM signals - R and L - that goes to a low pass filter to make a  Voltage 
  *  from 0.2V to 5V, and connect this to the throttle input of the controller.)
- *  To drive Rackward I use Outputs - L and -R that activate two relais' to switch two fases from each motor when the
+ *  To drive Backward I use Outputs - L and -R that activate two relais' to switch two fases from each motor when the
  *  joystick goes to x-.
  *  Pushbutton from Joy_stick canceld !
  *
