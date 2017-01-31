@@ -94,7 +94,7 @@ void Direction_BW(){
                   
 void Direction_Turn_L(){
   
-                     if (Turn_L_Bit == 0){ 
+                     if ((Turn_L_Bit == 0)||(Turn_R_Bit == 1)){ 
                      delay(50); 
                      digitalWrite (L_Controller_ON, LOW);// Disable L Controller
                      digitalWrite (R_Controller_ON, LOW);// Disable R Controller           
@@ -111,7 +111,7 @@ void Direction_Turn_L(){
                     
 void Direction_Turn_R(){
   
-                     if (Turn_R_Bit == 0){ 
+                     if ((Turn_R_Bit == 0)||(Turn_L_Bit == 1)){ 
                      delay(50); 
                      digitalWrite (L_Controller_ON, LOW);// Disable L Controller
                      digitalWrite (R_Controller_ON, LOW);// Disable R Controller           
@@ -199,7 +199,7 @@ void Speed_Limiet_Control(){
                     Speed_Fault = 1;
                     }
                       
-                    if (Speed_Fault = 1){
+                    if (Speed_Fault == 1){
                     digitalWrite (L_Controller_ON, LOW); // Disable L Controller
                     digitalWrite (R_Controller_ON, LOW); // Disable R Controller
                     }
@@ -209,8 +209,8 @@ void Read_Analog_Values(){
 
                     Joy_y = analogRead (A0);// Joy_Stick L/R
                     Joy_x = analogRead (A1);// Joy_Stick FW/BW
-                    Safety_L = analogRead (A2);// Feed_Back Voltage from L Controller
-                    Safety_R = analogRead (A3);// Feed_Back Voltage from R Controller
+                    Safety_L = analogRead (A2);// Feed_Back Voltage from the L Controller to control the presetted limiet speed
+                    Safety_R = analogRead (A3);// Feed_Back Voltage from the R Controller to control the presetted limiet speed
                     ButtonState_Turn_L = digitalRead(Button_Turn_L); // Push Button on the left of the control panel
                     ButtonState_Turn_R = digitalRead(Button_Turn_R); // Push Button on the left of the control panel
 }
@@ -230,10 +230,12 @@ void Increment_Speed(){
                     Count = 0;
                     Speed_Up++;
                     }
-                    if (Speed_Up > Max_Speed_Up)  Speed_Up = Max_Speed_Up;
-                    
+                    if (Speed_Up > Max_Speed_Up){
+                    Speed_Up = Max_Speed_Up;
+                    }
 }
-/********************************************************************************************************************************/
+                   
+/****************************************************************************************************************************/
 
 void setup() {
   
